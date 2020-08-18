@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimun-scale=1">
+    <link rel="stylesheet" href="../static/css/fontello.css">
+    <link rel="stylesheet" href="../static/css/style-inicio.css">
+    <link rel="stylesheet" href="../static/css/adopcion.css">
+    <title>
+        {% block title %}
+        {% endblock %}
+        | Editar
+    </title>
+</head>
+
+{% block contenedor %}
+        <h2>Lista de Mascotas</h2>
+        <hr>
+
+        <form action="/update/{{ mascota.id }}">
+
+        
+
+            <label class="form-group" for="nombre">Nombre: </label>
+            <input class="form-control" type="text" name="nombre" value="{{ mascota.nombre }}">
+
+            <label class="form-group" for="descripcion">Descripcion: </label>
+            <input class="form-control" type="text" name="descripcion" value="{{ mascota.descripcion }}">
+
+            <br>
+            <input class="btn btn-primary" type="submit" value="Actualizar">
+
+        </form>
+{% endblock %}

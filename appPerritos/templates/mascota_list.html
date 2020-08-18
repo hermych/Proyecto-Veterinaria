@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+ Mascotas
+{% endblock %}
+
+{% block contenedor %}
+<form action="/buscar/" method="GET">
+    <input type="text" name="msct">
+    <input type="submit" value="Buscar">
+</form>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Nombre</td>
+            <td>Descripcion</td>
+            <td>Acciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% if mascotas %}
+            {% for mascota in mascotas %}
+                <tr>
+                    <td>{{mascota.id}}</td>
+                    <td>{{mascota.nombre}}</td>
+                    <td>{{mascota.descripcion}}</td>
+                    <td>
+                        <a class="btn btn_info editar" href="/edit/{{ mascota.id }}">Editar</a>
+                        <a class="btn btn_danger" href="/delete/{{ mascota.id }}">Eliminar</a>
+                    </td>
+
+                </tr>
+            {% endfor %}
+        {% else %}
+            <p>No hay registro de mascotas</p>
+        {% endif %}
+    </tbody>
+</table>
+    
+    <a class="btn_agregar" href="/add_perrito/">Agregar Perrito</a>
+    <hr>
+{% endblock %}

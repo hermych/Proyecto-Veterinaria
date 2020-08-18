@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block contenedor %}
+<div class="container">
+    <br>
+    <h2>Agregar Mascota</h2>
+    <hr>
+
+    <form action="/create">
+                {%  csrf_token %}
+            <label class="form-group" for="nombre">Nombre: </label>
+            <input class="form-control" type="text" name="nombre"><br>
+
+            <label class="form-group" for="descripcion">Descripcion: </label>
+            <input class="form-control" type="text" name="descripcion"><br>
+
+            <input class="btn btn-success" type="submit" value="Agregar">
+    </form>
+    <br>
+</div>
+{% endblock %}

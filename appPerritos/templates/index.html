@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% block title %}
+    Inicio
+{% endblock %}
+{% block contenedor %}
+    <main>
+        <section id="bienvenidos">
+            <h2>BIENVENIDOS A NUESTRO CLUB</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dicta asperiores nesciunt repudiandae fugiat, quia ipsum atque labore tenetur eum, corrupti culpa animi.</p>
+        </section>
+
+        <section id="blog">
+            <h3>Lo último de nuestro blog</h3>
+            <div class="contenedor">
+                <article>
+                    <img src="../static/img/pet-blog1.jpg">
+                    <h4>Escoge tu mascota perfecta</h4>
+                </article>
+                <article>
+                    <img src="../static/img/pet-blog2.jpg">
+                    <h4>Los animales necesitan cariño</h4>
+                </article>
+                <article>
+                    <img src="../static/img/pet-blog3.jpg">
+                    <h4>Camina con tu mascota</h4>
+                </article>
+            </div>
+        </section>
+
+        <section id="info">
+            <h3>Para muchos de nosotros las mascotas no son simples compañeros, son miembros de familia</h3>
+            <div class="contenedor">
+                <div class="info-pet">
+                    <img src="../static/img/pet1.jpg" alt="">
+                    <h4>Julio</h4>
+                </div>
+                <div class="info-pet">
+                    <img src="../static/img/pet2.jpg" alt="">
+                    <h4>Pompita</h4>
+                </div>
+                <div class="info-pet">
+                    <img src="../static/img/pet3.jpg" alt="">
+                    <h4>Jerry</h4>
+                </div>
+                <div class="info-pet">
+                    <img src="../static/img/pet4.jpg" alt="">
+                    <h4>Chousu</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

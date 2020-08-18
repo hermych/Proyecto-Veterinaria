@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block title %}
+    Busqueda Mascota
+{% endblock %}
+
+{% block contenedor %}
+<form class="formulario" action="/buscar/" method="GET">
+    <input type="text" name="msct">
+    <input type="submit" value="Buscar">
+</form>
+<body class="busqueda_mascota">
+{% comment %} <p>Estas buscando: <strong>{{query}}</strong></p> {% endcomment %}
+<section>
+{% if mascota %}
+    {% comment %} <p>Mascotas encontradas: {{mascota|length}} mascotas</p> {% endcomment %}
+    <main id="main-container">
+        <table border="1">
+            <tbody>
+            <thead>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+            </thead>
+            {% for perrito in mascota %}
+                <tr>
+                    <td class="numero">{{perrito.id}}</td>
+                    <td>{{perrito.nombre}}</td>
+                    <td>{{perrito.descripcion}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </main>
+{% else %}
+    <p>No se encuentra la mascota buscada</p>
+{% endif %}
+</body>
+{% endblock %}
